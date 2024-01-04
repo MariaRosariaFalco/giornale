@@ -1,74 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pollice Verde | Homepage</title>
-    <link rel = "icon" type = "image/png" href = "minilogo.png">
-    <link href="style.css" rel="stylesheet"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Homepage Categoria Notizie</title>
+    <style>
+        
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .article {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .article img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .article h4 {
+            color: #007bff;
+        }
+
+        .search-form {
+            background-color: #343a40;
+            padding: 15px;
+            border-radius: 8px;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-    <div id="contenitore">
-        <div id="head">
-            <img src="banner4.png" id="banner" alt="banner"/>
-        </div>
-        <div id="main">
-            <div id="menu">
-                <ul>
-                    <li> <a href="#">Home</a></li> 
-                    <li> <a href="index_3.html">Chi siamo</a></li> 
-                    <li> <a href="index_2.html">Blog</a></li> 
-                    <li> <a href="#">Contatti</a></li> 
-                    <li> <a href="#">Lavora con noi</a></li> 
-                </ul> 
-            </div>
-            <div id="tendina">
-                <select name="menu" class="casella">
-                    <option selected="selected">Home</option>
-                    <option value="chisiamo">Chi siamo</option>
-                    <option value="blog">Blog</option>
-                    <option value="contatti">Contatti</option>
-                    <option value="lavoraconnoi">Lavora con noi </option>
-                </select>
-            </div> 
-            <div id="articolo">
-                <h2>Benvenuti!</h2>
-                <p>Le piante sono nostre amiche e compagne di stanza. Proprio come noi, le piante hanno bisogno di acqua, aria, cibo e tanto amore. Con i prodotti giusti inizierai a scoprire una realtà piena di passione verde, e inoltre tutti i prodotti Undergreen sono consentiti in agricoltura biologica. Sul nostro blog inoltre troverai molti suggerimenti e trucchi per la cura delle tue amiche verdi. Vieni, tuffati nel mondo di <span class="evidenzia">Pollice Verde!</span></p><br/>
-                <img src="foto_home.jpg" class="foto" alt="foto piante"/> <br/>
-                <p id="firma">La redazione, 4 ottobre 2023</p>
-             </div>
-            <div id="notizie">
-                <ol>
-                    <li><a href="index_2.html">Perché hai bisogno di piante nella tua vita</a></li>
-                    <li><a href="index_4.html">Il giardino di Virginia Woolf</a></li>
-                    <li><a href="#">Piante che passione!</a></li>
-                    <li><a href="#">Perchè scegliere un girasole?</a></li>
-                    <li><a href="#">Viole o Iris?</a></li>
-                </ol>
-            </div>
-            <div id="footer">
-                <div id="contatti">
-                    Tel.: <a href="tel:+39068770042">06 87770042</a> <br/> 
-                    Email: <a href="mailto:info@piante.it">info@generation.org</a><br/> 
-                    P.Iva: 1234567890 
-                </div>
-                <div id="calendario">
-                    <table>
-                        <tr>
-                            <td>04 &nbsp;</td>
-                            <td>10 &nbsp;</td>
-                            <td>23</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-        
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Jaita98News</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Categorie</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contatti</a>
+            </li>
+        </ul>
     </div>
-    
-    
+</nav>
+
+<!-- Contenuto della Homepage -->
+<div class="container mt-4">
+
+    <!-- Sezione Elenco Articoli e Ultimo Articolo in Evidenza -->
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Elenco Articoli</h2>
+            <div class="article">
+                <img src="https://via.placeholder.com/800x400" alt="Immagine Articolo">
+                <h4>Titolo dell'Articolo</h4>
+                <p>Sottotitolo dell'articolo che fornisce una breve descrizione del contenuto.</p>
+                <p>Autore: Nome dell'autore - Data di pubblicazione: 01 Gennaio 2024</p>
+                <p>Testo completo dell'articolo...</p>
+            </div>
+            <!-- Ripetere questa struttura per ogni articolo nell'elenco -->
+        </div>
+        <div class="col-md-4">
+            <h2>Ultimo Articolo in Evidenza</h2>
+            <div class="article">
+                <img src="https://via.placeholder.com/400x200" alt="Immagine Articolo">
+                <h4>Titolo dell'Articolo in Evidenza</h4>
+                <p>Sottotitolo dell'articolo in evidenza che fornisce una breve descrizione del contenuto.</p>
+                <p>Autore: Nome dell'autore - Data di pubblicazione: 02 Gennaio 2024</p>
+                <p>Testo completo dell'articolo...</p>
+            </div>
+        </div>
+    </div>
+
+   
+    <div class="row mt-4">
+        <div class="col-md-8">
+            <h2>Elenco Articoli Filtrati</h2>
+            <div class="article">
+                <h4>Titolo dell'Articolo Filtrato</h4>
+                <p>Sottotitolo dell'articolo filtrato che fornisce una breve descrizione del contenuto.</p>
+                <p>Autore: Nome dell'autore - Data di pubblicazione: 03 Gennaio 2024</p>
+                <p>Testo completo dell'articolo...</p>
+            </div>
+            <!-- Ripetere questa struttura per ogni articolo nell'elenco filtrato -->
+        </div>
+        <div class="col-md-4">
+            <h2>Form di Ricerca</h2>
+            <form class="search-form">
+                <div class="form-group">
+                    <label for="searchInput">Cerca per parola chiave</label>
+                    <input type="text" class="form-control" id="searchInput" placeholder="Inserisci parola chiave">
+                </div>
+                <button type="submit" class="btn btn-primary">Cerca</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3 mt-4">
+    <p>&copy; 2024 Il Tuo Sito. Tutti i diritti riservati.</p>
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
