@@ -15,7 +15,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -44,15 +44,21 @@ public class Articolo {
 	@Column(name="immagine")
 	private String immagine;
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name="id_categoria", referencedColumnName = "id")
 	private Categoria categoria;
+	
+	@ManyToOne
+	@JoinColumn(name="id_sottocategoria", referencedColumnName = "id")
+	private Sottocategoria sottocategoria;
 	
 	@ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
 	@JoinTable(name = "articoli_tag", joinColumns = @JoinColumn(name="id_articolo", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name= "id_tag", referencedColumnName = "id"))
 	private List<Tag> tags = new ArrayList<>();
 	
 	
+	
+
 	public int getId() {
 		return id;
 	}
@@ -115,5 +121,21 @@ public class Articolo {
 
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
+	}
+	
+	public Sottocategoria getSottocategoria() {
+		return sottocategoria;
+	}
+
+	public void setSottocategoria(Sottocategoria sottocategoria) {
+		this.sottocategoria = sottocategoria;
+	}
+
+	public List<Tag> getTags() {
+		return tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
 	}
 }
