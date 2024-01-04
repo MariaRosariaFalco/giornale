@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import it.corso.dao.CategoriaDao;
+import it.corso.Dao.CategoriaDao;
 import it.corso.model.Categoria;
 
 @Service
