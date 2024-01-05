@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" href="image/favicon-16x16.png">
+    <title>Dettaglio Articolo</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark barra1">
+        <a class="navbar-brand" href="#">Jaita98News</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Categorie
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="sezione.html?categoria=cronaca">Cronaca</a>
+                        <a class="dropdown-item" href="sezione.html?categoria=politica">Politica</a>
+                        <a class="dropdown-item" href="sezione.html?categoria=sport">Sport</a>
+                        <a class="dropdown-item" href="sezione.html?categoria=intrattenimento">Economia</a>
+                        <a class="dropdown-item" href="sezione.html?categoria=cultura">Cultura</a>
+                        <a class="dropdown-item" href="sezione.html?categoria=tecnologia">Scienza e Tecnologia</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contatti</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenuto della Pagina di Dettaglio -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Dettaglio Articolo</h2>
+                <div class="card">
+                    <img src="image/news.jpg" class="card-img-top" alt="Immagine Articolo">
+                    <div class="card-body">
+                        <h4 class="card-title">Titolo </h4>
+                        <p class="card-text">Sottotitolo</p>
+                        <p class="card-text">Tipologia: Politica</p>
+                        <p class="card-text">Autore: Nome dell'autore - Data di pubblicazione: 01 Gennaio 2024</p>
+                        <p class="card-text">Testo completo dell'articolo...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-white text-center py-3 mt-4 barra">
+        <p>Partita IVA: 00123456789</p>
+        <p>Email: info@jaita98news.com</p>
+        <p>Telefono: +39 0123 456789</p>
+        <p>Indirizzo: Via della Stampa, 22, 00100 Roma, Italia</p>
+        <p>&copy; 2024 Jaita98News. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
