@@ -45,18 +45,23 @@ public class Articolo {
 	private String immagine;
 	
 	@ManyToOne
-	@JoinColumn(name="id_categoria", referencedColumnName = "id")
+	@JoinColumn(name="fk_id_categoria", referencedColumnName = "id")
 	private Categoria categoria;
 	
 	@ManyToOne
-	@JoinColumn(name="id_sottocategoria", referencedColumnName = "id")
+	@JoinColumn(name="fk_id_sottocategoria", referencedColumnName = "id")
 	private Sottocategoria sottocategoria;
+	
+	@Column(name="stato")
+	private String stato;
 	
 	@ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
 	@JoinTable(name = "articoli_tag", joinColumns = @JoinColumn(name="id_articolo", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name= "id_tag", referencedColumnName = "id"))
 	private List<Tag> tags = new ArrayList<>();
 	
 	
+	
+
 	
 
 	public int getId() {
@@ -137,5 +142,13 @@ public class Articolo {
 
 	public void setTags(List<Tag> tags) {
 		this.tags = tags;
+	}
+	
+	public String getStato() {
+		return stato;
+	}
+
+	public void setStato(String stato) {
+		this.stato = stato;
 	}
 }
