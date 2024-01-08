@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="icon" type="image/png" href="image/favicon-32x32.png">
     <title>Dettaglio Articolo</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" th:href="@{css/style.css}">
 </head>
 
 <body>
@@ -29,12 +29,12 @@
                         Categorie
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="sezione.html?categoria=cronaca">Cronaca</a>
-                        <a class="dropdown-item" href="sezione.html?categoria=politica">Politica</a>
-                        <a class="dropdown-item" href="sezione.html?categoria=sport">Sport</a>
-                        <a class="dropdown-item" href="sezione.html?categoria=intrattenimento">Economia</a>
-                        <a class="dropdown-item" href="sezione.html?categoria=cultura">Cultura</a>
-                        <a class="dropdown-item" href="sezione.html?categoria=tecnologia">Scienza e Tecnologia</a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='cronaca')}">Cronaca</a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='politica')}">Politica</a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='sport')}">Sport</a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='economia')}">Economia</a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='cultura')}">Cultura</a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='scienza e tecnologia')}">Scienza e Tecnologia</a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -53,13 +53,14 @@
             <div class="col-md-8">
                 <h2>Dettaglio Articolo</h2>
                 <div class="card">
-                    <img src="image/news.jpg" class="card-img-top" alt="Immagine Articolo">
+                    <!--in caso spostare di nuovo immagine qua -->
                     <div class="card-body">
-                        <h4 class="card-title">Titolo </h4>
-                        <p class="card-text">Sottotitolo</p>
-                        <p class="card-text">Tipologia: Politica</p>
-                        <p class="card-text">Autore: Nome dell'autore - Data di pubblicazione: 01 Gennaio 2024</p>
-                        <p class="card-text">Testo completo dell'articolo...</p>
+                        <h4 class="card-title" th:text="${lista[id-1].titolo}"> </h4> 
+                        <img th:src="${lista[id-1].immagine}" class="card-img-top" alt="Immagine Articolo">     
+                        <p class="card-text" th:text="${lista[id-1].sottotitolo}"> </p>                          
+                        <p class="card-text" th:text="${lista[id-1].autore}+ ' ultimo aggiornamento: ' +${lista[id-1].dataPubblicazione}"></p>
+                        <p class="card-text" th:text="${lista[id-1].testo}"></p>
+                       <!-- <p class="card-text" th:text="${lista[id-1].tag}"></p> -->  
                     </div>
                 </div>
             </div>

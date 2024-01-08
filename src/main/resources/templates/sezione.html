@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="icon" type="image/png" href="image/favicon-32x32.png">
     <title>Sezione Notizie</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" th:href="@{css/style.css}">
 </head>
 
 <body>
@@ -28,12 +28,12 @@
                         Categorie
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="sezione.html?categoria=cronaca">Cronaca</a>
-                        <a class="dropdown-item" href="sezione.html?categoria=politica">Politica</a>
-                        <a class="dropdown-item" href="sezione.html?categoria=sport">Sport</a>
-                        <a class="dropdown-item" href="sezione.html?categoria=intrattenimento">Economia</a>
-                        <a class="dropdown-item" href="sezione.html?categoria=cultura">Cultura</a>
-                        <a class="dropdown-item" href="sezione.html?categoria=tecnologia">Scienza e Tecnologia</a>
+                       <a class="dropdown-item"  th:href="@{sezione(categoria='cronaca')}">Cronaca</a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='politica')}">Politica</a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='sport')}">Sport</a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='economia')}">Economia</a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='cultura')}">Cultura</a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='scienza e tecnologia')}">Scienza e Tecnologia</a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -53,14 +53,15 @@
         <div class="row">
             <div class="col-md-8">
                 <h2>Elenco Articoli Filtrati per Categoria</h2>
-                <a href="dettaglio.html" class="article-link">
-                    <div class="card">
-                        <img src="/image/news3.jpg" class="card-img-top" alt="Immagine Articolo">
+                    <div th:each="a : ${risultati}" class="card">
+						<a th:href="@{dettaglio(id=${a.id})}" class="article-link">
+                       <img th:src="@{'image/'+${a.immagine}}" class="card-img-top" alt="Immagine Articolo">
                         <div class="card-body">
-                            <h4 class="card-title">Titolo dell'Articolo</h4>
-                            <p class="card-text">Sottotitolo.</p>
-                            <p class="card-text">Autore: Nome dell'autore - Data di pubblicazione: 03 Gennaio 2024</p>
-                            <p class="card-text">Testo dell'articolo...</p>
+                          <h4 th:text="${a.titolo}" class="card-title"></h4>
+                            <p th:text="${a.sottotitolo}" class="card-text"></p>
+                            <p th:text="${a.dataPubblicazione}+' di '+${a.autore}" class="card-text"></p>
+                            <p th:text="${a.testo}" class="card-text"></p>
+                            </a> 
                         </div>
                     </div>
                 </a>
