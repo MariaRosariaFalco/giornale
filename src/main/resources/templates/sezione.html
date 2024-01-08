@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="icon" type="image/png" href="image/favicon-16x16.png">
     <title>Sezione Notizie</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" th:href="@{css/style.css}"> <!--modificato il path css con thymeleaf-->
 </head>
 
 <body>
@@ -56,11 +56,11 @@
                 <h2>Elenco Articoli Filtrati per Categoria</h2>
                 <a href="dettaglio.html" class="article-link">
                     <div th:each="a : ${risultati}" class="card">
-                        <img th:src="@{'image/'+${a.immagine}" class="card-img-top" alt="Immagine Articolo">
+                       <img th:src="@{'image/'+${a.immagine}}" class="card-img-top" alt="Immagine Articolo">
                         <div  class="card-body">
                             <h4 th:text="${a.titolo}" class="card-title"></h4>
                             <p th:text="${a.sottotitolo}" class="card-text"></p>
-                            <p th:text="${a.data_pubblicazione}+' di '+${a.autore}" class="card-text"></p>
+                            <p th:text="${a.dataPubblicazione}+' di '+${a.autore}" class="card-text"></p>
                             <p th:text="${a.testo}" class="card-text"></p>
                         </div>
                     </div>

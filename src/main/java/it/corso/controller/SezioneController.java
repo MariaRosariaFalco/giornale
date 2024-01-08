@@ -24,9 +24,9 @@ public class SezioneController {
 	 private ArticoloService articoloService;
 	
 	@GetMapping
-	public String getPage(Model model, @RequestParam(name="richiesta", required=false) String richiesta) {
+	public String getPage(Model model, @RequestParam(name="richiesta", required=false) String richiesta, @RequestParam("categoria")String categoria) {
 		
-		List<Articolo> risultati = richiesta==null ? articoloService.getArticoli(): articoloService.getArticoliByTag(richiesta);
+		List<Articolo> risultati = richiesta==null ? articoloService.getArticoliByCategoria(categoria): articoloService.getArticoloByTagInCategoria(richiesta, categoria);
 		
 		model.addAttribute("risultati", risultati);
 		
@@ -34,7 +34,6 @@ public class SezioneController {
 		return "sezione";
 	}
 	//nel method del form metti get
-	
 	
 	
 	

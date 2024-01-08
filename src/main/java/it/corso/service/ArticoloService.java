@@ -10,5 +10,6 @@ public interface ArticoloService {
 	List<Articolo> getArticoli();
 	List<Articolo> getArticoliByCategoria(String codice);
 	List<Articolo> getArticoliByTag(String parola);
+	List<Articolo> getArticoloByTagInCategoria(String parola, String Codice);
 
 }

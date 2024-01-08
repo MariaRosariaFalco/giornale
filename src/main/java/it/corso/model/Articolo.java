@@ -1,9 +1,8 @@
 package it.corso.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.xml.crypto.Data;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -36,7 +35,7 @@ public class Articolo {
 	private String autore;
 	
 	@Column(name="data_pubblicazione")
-	private Data dataPubblicazione;
+	private LocalDate dataPubblicazione;
 	
 	@Column(name="testo")
 	private String testo;
@@ -96,11 +95,11 @@ public class Articolo {
 		this.autore = autore;
 	}
 
-	public Data getDataPubblicazione() {
+	public LocalDate getDataPubblicazione() {
 		return dataPubblicazione;
 	}
 
-	public void setDataPubblicazione(Data dataPubblicazione) {
+	public void setDataPubblicazione(LocalDate dataPubblicazione) {
 		this.dataPubblicazione = dataPubblicazione;
 	}
 

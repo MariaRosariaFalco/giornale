@@ -30,10 +30,29 @@ public class ArticoloServiceImpl implements ArticoloService {
 	public List<Articolo> getArticoliByCategoria(String codice) {
 		return articoloDao.findByCategoriaCodice(codice);
 	}
+	
+	
 
 	@Override
 	public List<Articolo> getArticoliByTag(String parola) {
 		List<Articolo> articoli = (List<Articolo>) articoloDao.findAll();
+		List<Articolo> articoliFiltrati = new ArrayList<>();
+		
+		for (Articolo a : articoli ) {
+			for (Tag t : a.getTags() ) {
+				if (t.getParola().equalsIgnoreCase(parola)) {
+					articoliFiltrati.add(a);
+				}
+			}
+			
+		}
+		
+		return articoliFiltrati;
+	}
+
+	@Override
+	public List<Articolo> getArticoloByTagInCategoria(String parola, String codice) {
+		List<Articolo> articoli = (List<Articolo>) articoloDao.findByCategoriaCodice(codice);
 		List<Articolo> articoliFiltrati = new ArrayList<>();
 		
 		for (Articolo a : articoli ) {
