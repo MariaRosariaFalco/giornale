@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Creato il: Gen 05, 2024 alle 17:30
--- Versione del server: 10.1.38-MariaDB
--- Versione PHP: 5.6.40
+-- Host: localhost
+-- Creato il: Gen 08, 2024 alle 15:23
+-- Versione del server: 10.4.28-MariaDB
+-- Versione PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -30,15 +29,15 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `articoli` (
   `id` int(11) NOT NULL,
-  `titolo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `sottotitolo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `autore` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `titolo` varchar(255) NOT NULL,
+  `sottotitolo` varchar(255) NOT NULL,
+  `autore` varchar(255) DEFAULT NULL,
   `data_pubblicazione` datetime NOT NULL,
-  `testo` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `immagine` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `testo` text NOT NULL,
+  `immagine` varchar(255) NOT NULL,
   `fk_id_categoria` int(11) NOT NULL,
   `fk_id_sottocategoria` int(11) NOT NULL,
-  `stato` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `stato` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -46,7 +45,7 @@ CREATE TABLE `articoli` (
 --
 
 INSERT INTO `articoli` (`id`, `titolo`, `sottotitolo`, `autore`, `data_pubblicazione`, `testo`, `immagine`, `fk_id_categoria`, `fk_id_sottocategoria`, `stato`) VALUES
-(1, 'La furia di Blanco sul palco di Sanremo: distrutti i fiori dell\'Ariston', 'Il cantante ha presentato il suo nuovo singolo \'L\'isola delle rose\', ma a causa di problemi tecnici non è riuscito ad esibirsi e si è sfogato sulle decorazioni. Amadeus: \"Mi ha chiamato per scusarsi\"', 'Carlo Moretti', '2023-02-08 13:38:00', 'SANREMO - Tensione all\'Ariston al termine dell\'esibizione di Blanco, che in precedenza aveva eseguito Brividi con Mahmood. Il cantante ha presentato sul palco il suo nuovo singolo L\'isola delle rose, ma a causa di problemi tecnici non è riuscito a cantare e si è sfogato distruggendo tutti i fiori del palco. Perché? L\'ipotesi che circola con maggior insistenza è quella di una coreografia andata male: nel suo ultimo video il cantante distrugge centinaia di rose. E durante la conferenza stampa di oggi arriva anche il commento a freddo di Amadeus: \"Sa di aver sbagliato, mi ha chiamato per chiedermi scusa. Per lui nessuna punizione\".\r\n\r\nUna furia sul palco\r\nPer sfogare la sua frustrazione ha afferrato delle griglie con dei fiori sul palco, lanciandole in aria e distruggendole. Il pubblico ha cominciato a fischiarlo, e il cantante ha provato a giustificarsi: \"Non sentivo la mia voce in cuffia e allora ho voluto divertirmi comunque\", ha detto Blanco, senza riuscire però a placare gli animi della platea che ha continuato a fischiarlo.\r\n\r\n', 'https://www.repstatic.it/content/nazionale/img/2023/02/08/001507622-bf45cc97-2cda-4100-9a26-1c20a33c04cc.jpg?webp', 3, 11, 'pubblicato'),
+(1, 'La furia di Blanco sul palco di Sanremo: distrutti i fiori dell\'Ariston', 'Il cantante ha presentato il suo nuovo singolo \'L\'isola delle rose\', ma a causa di problemi tecnici non è riuscito ad esibirsi e si è sfogato sulle decorazioni. Amadeus: \"Mi ha chiamato per scusarsi\"', 'Carlo Moretti', '2023-02-08 13:38:00', 'SANREMO - Tensione all\'Ariston al termine dell\'esibizione di Blanco, che in precedenza aveva eseguito Brividi con Mahmood. Il cantante ha presentato sul palco il suo nuovo singolo L\'isola delle rose, ma a causa di problemi tecnici non è riuscito a cantare e si è sfogato distruggendo tutti i fiori del palco. Perché? L\'ipotesi che circola con maggior insistenza è quella di una coreografia andata male: nel suo ultimo video il cantante distrugge centinaia di rose. E durante la conferenza stampa di oggi arriva anche il commento a freddo di Amadeus: \"Sa di aver sbagliato, mi ha chiamato per chiedermi scusa. Per lui nessuna punizione\".\r\n\r\nUna furia sul palco\r\nPer sfogare la sua frustrazione ha afferrato delle griglie con dei fiori sul palco, lanciandole in aria e distruggendole. Il pubblico ha cominciato a fischiarlo, e il cantante ha provato a giustificarsi: \"Non sentivo la mia voce in cuffia e allora ho voluto divertirmi comunque\", ha detto Blanco, senza riuscire però a placare gli animi della platea che ha continuato a fischiarlo.\r\n\r\n', 'blanco.webp', 3, 11, 'pubblicato'),
 (2, 'Finanza, non è un lavoro per donne: solo il 32% dei capi azienda', 'Le quote rosa, in campo finanziario e assicurativo, rappresentano a livello globale solo il 19% dei membri del consiglio di amministrazione delle compagnie assicurative e il 23% dei dirigenti finanziari. In Italia Nel 2022, le donne erano al 32% in posizi', 'Redazione Economia', '2023-05-19 16:26:00', '\r\nLa finanza? Non è un “paese” per donne. Secondo uno studio McKinsey & Company le donne, in campo finanziario e assicurativo, rappresentano a livello globale solo il 19% dei membri del consiglio di amministrazione delle compagnie assicurative e il 23% dei dirigenti finanziari.  La poca presenza di donne nei cda non è una questione che riguarda solo le banche e le assicurazioni ma abbraccia tutte le industrie e le professioni legate a tematiche Stem.', 'occupazione.webp', 2, 7, 'pubblicato'),
 (3, 'Eseguito a New York il primo trapianto di un intero occhio', 'Il paziente è un veterano militare dell\'Arkansas Aaron James. Eduardo Rodriguez, il medico alla guida dell\'equipe che ha condotto l\'intervento: \"Enorme passo in avanti\"', 'Maria Rosaria Vitiello', '2023-11-10 09:07:00', 'E\' stato eseguito a New York il primo trapianto di un intero occhio umano. Lo riporta Scientific America. L\'intervento, eseguito sei mesi fa durante un trapianto parziale di faccia, sembra essere andato bene secondo i medici che l\'hanno eseguito. \"Il fatto che abbiamo trapiantato un occhio è un enorme passo in avanti, è qualcosa a cui si pensava da secoli ma che non era mai stato eseguito\", ha detto Eduardo Rodriguez, il dottore alla guida dell\'equipe che ha condotto l\'intervento, durato 21 ore.\r\n \r\n\r\nL\'incidente nel 2021 Il paziente è un veterano militare dell\'Arkansas Aaron James, il cui volto ha toccato un filo in tensione mentre lavorava come manutentore elettrico in Oklahoma nel giugno 2021. L\'incidente lo aveva lasciato con gravi ustioni sul lato sinistro del viso, compreso l\'occhio sinistro, naso e labbra, e danni estesi al braccio sinistro, il suo arto dominante. \"Vorrei ringraziare il donatore e la famiglia del donatore. Senza di loro, nulla di tutto ciò sarebbe stato possibile\", ha detto James.\r\n \r\n\r\nRichiesto l\'aiuto di 140 chirurghi L\'intervento per il parziale trapianto di faccia e dell\'intero occhio ha richiesto l\'aiuto di 140 chirurghi. L\'occhio trapiantato mostra \"notevoli\" segnali di buona salute ma James ancora non può vedere e si augura che con il tempo la vista torni e che l\'innovativo intervento a cui è stato sottoposto possa aiutare la medicina dei trapianti. \"E\' la mia maggiore speranza. Se riuscirò a vedere sarà fantastico. Se l\'intervento farà da apripista a una nuova strada nel campo medico sono completamente a favore\", ha detto James alla Cnn.\".', 'medicina.jpg', 5, 20, 'pubblicato'),
 (4, 'Riunione di Emergenza del Consiglio di Sicurezza dell\'ONU: Crisi nel Mediterraneo Orientale', 'Tensioni crescenti tra nazioni costiere mettono alla prova la stabilità geopolitica della regione', 'Alexandra Rossi', '2024-01-05 10:16:00', 'Una riunione straordinaria del Consiglio di Sicurezza delle Nazioni Unite è stata convocata per affrontare la crescente crisi nel Mediterraneo Orientale. Le tensioni tra diverse nazioni costiere hanno raggiunto un punto critico, mettendo a rischio la stabilità e la sicurezza nella regione.\r\n\r\nIl conflitto tra i paesi coinvolti, spesso incentrato su questioni territoriali e marittime, ha causato crescenti preoccupazioni a livello internazionale. La disputa per le risorse naturali e il controllo delle rotte commerciali ha portato a una serie di incidenti e provocazioni, sollevando timori di una possibile escalation delle ostilità.\r\n\r\nIl Segretario Generale dell\'ONU ha espresso profonda preoccupazione per la situazione e ha chiesto un\'immediata azione diplomatica per ridurre le tensioni e promuovere un dialogo costruttivo tra le parti coinvolte. La comunità internazionale è stata chiamata a intervenire per facilitare un processo di negoziazione che porti a una risoluzione pacifica del conflitto.\r\n\r\nLa riunione del Consiglio di Sicurezza, che coinvolge rappresentanti delle principali potenze mondiali, è stata vista come un tentativo urgente di evitare una potenziale crisi geopolitica nel Mediterraneo Orientale. I colloqui mirano a trovare soluzioni diplomatiche e a promuovere una cooperazione regionale per garantire la pace e la stabilità nella zona.\r\n\r\nL\'evento è seguito con grande attenzione dalla comunità internazionale, con la speranza che l\'impegno diplomatico e la cooperazione multilaterale possano contribuire a una risoluzione pacifica di questa crescente crisi nella diplomazia internazionale.', '', 1, 2, 'non pubblicato'),
@@ -132,8 +131,8 @@ INSERT INTO `articoli_tag` (`id_articolo`, `id_tag`) VALUES
 
 CREATE TABLE `categorie` (
   `id` int(11) NOT NULL,
-  `codice` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `descrizione` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `codice` varchar(255) NOT NULL,
+  `descrizione` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -156,7 +155,7 @@ INSERT INTO `categorie` (`id`, `codice`, `descrizione`) VALUES
 
 CREATE TABLE `sottocategorie` (
   `id` int(11) NOT NULL,
-  `nome` varchar(255) COLLATE utf8_bin NOT NULL
+  `nome` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
@@ -193,7 +192,7 @@ INSERT INTO `sottocategorie` (`id`, `nome`) VALUES
 
 CREATE TABLE `tag` (
   `id` int(11) NOT NULL,
-  `parola` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `parola` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
