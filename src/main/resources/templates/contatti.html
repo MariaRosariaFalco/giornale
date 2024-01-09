@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" href="image/favicon-32x32.png">
+    <title>Contatti</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark barra1">
+        <a class="navbar-brand" href="index.html">
+            <img src="image/Logo1.jpg" alt="Logo Jaita98News">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Categorie
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="sezione.html?categoria=cronaca">Cronaca</a>
+                        <a class="dropdown-item" href="sezione.html?categoria=politica">Politica</a>
+                        <a class="dropdown-item" href="sezione.html?categoria=sport">Sport</a>
+                        <a class="dropdown-item" href="sezione.html?categoria=intrattenimento">Economia</a>
+                        <a class="dropdown-item" href="sezione.html?categoria=cultura">Cultura</a>
+                        <a class="dropdown-item" href="sezione.html?categoria=tecnologia">Scienza e Tecnologia</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contatti.html">Contatti</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="chisiamo.html">Chi Siamo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="lavoro.html">Lavora con noi</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenuto della Pagina di Contatto -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Contatti</h2>
+                <p>Puoi contattarci nei seguenti modi:</p>
+                <ul>
+                    <li>Email: info@jaita98news.com</li>
+                    <li>Telefono: +39 0123 456789</li>
+                    <li>Indirizzo: Via della Stampa, 22, 00100 Roma, Italia</li>
+                </ul>
+                <p>Compila il modulo sottostante per inviarci un messaggio!</p>
+
+                <!-- Form di Contatto -->
+                <form action="mailto:info@jaita98news.com" method="post" enctype="text">
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" class="form-control" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="messaggio">Messaggio:</label>
+                        <textarea class="form-control" id="messaggio" name="messaggio" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Invia Messaggio</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-white text-center py-3 mt-4 barra">
+        <p>Partita IVA: 00123456789</p>
+        <p>Email: info@jaita98news.com</p>
+        <p>Telefono: +39 0123 456789</p>
+        <p>Indirizzo: Via della Stampa, 22, 00100 Roma, Italia</p>
+        <p>&copy; 2024 Jaita98News. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Ottieni il riferimento al form
+        var form = document.querySelector('form');
+
+        // Gestore eventi per l'invio del form
+        form.addEventListener('submit', function (event) {
+            // Controlla il nome
+            var nomeInput = form.querySelector('#nome');
+            if (!validateName(nomeInput.value)) {
+                alert('Il nome deve avere almeno tre lettere.');
+                event.preventDefault(); // Impedisce l'invio del form se la validazione fallisce
+            }
+
+        });
+
+        // Funzione per la validazione del nome
+        function validateName(nome) {
+            var regex = /^[a-zA-Z\s]{3,}$/;
+            return regex.test(nome);
+        }
+    });
+</script>
+
+</body>
+
+</html>
+
+
+</html>

@@ -6,7 +6,6 @@ body {
     margin: 0;
 }
 
-
 .navbar {
     background-color: #202038;
     /* padding: 15px 0; */
@@ -15,6 +14,7 @@ body {
     top: 0;
     width: 100%;
     z-index: 1000;
+    margin: 0;
 }
 
 .navbar-brand {
@@ -24,7 +24,6 @@ body {
     padding-top: 0;
     padding-bottom: 0;
 }
-
 
 .navbar-toggler-icon {
     background-color: #fff;
@@ -51,8 +50,8 @@ body {
     border-radius: 30px;
     overflow: hidden;
     z-index: 1;
-
 }
+
 
 .card:hover {
     transform: scale(1.02) perspective(1000px) rotateY(5deg);
@@ -70,7 +69,6 @@ body {
 .footer {
     margin-top: 20px;
     background-color: #202038;
-    /* Aggiungi !important per assicurarti che il colore venga applicato */
     color: #FFFFFF80;
     padding: 20px 0;
     height: auto;
@@ -101,7 +99,9 @@ a:link {
     color: #FFFFFF80;
     padding: 20px 0;
     height: 150px;
-    /* Modifica l'altezza del bg footer*/
+    /*MODIFICA APPORTATA DOPO PUSH*/
+    text-align: center;
+    overflow: hidden;
 }
 
 .barra p {
@@ -194,4 +194,28 @@ a:link {
     pointer-events: none;
     z-index: 1;
     transition: background 0.3s;
+}
+
+.container.container-with-margin {
+    max-width: 1200px;
+    /* larghezza massima per il contenitore principale */
+    margin: 0 auto;
+    /* Centra il contenitore orizzontalmente */
+    padding-top: 30px;
+    padding-bottom: 30px;
+    position: relative;
+}
+
+.card-container {
+    max-width: 1200px;
+    /* Imposta una larghezza massima per il contenitore delle carte */
+    margin: 10px auto;
+    /* Centra il contenitore delle carte orizzontalmente */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.title-margin {
+    margin-bottom: 20px;
 }
