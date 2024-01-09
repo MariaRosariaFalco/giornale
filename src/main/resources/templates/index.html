@@ -52,22 +52,6 @@
 
     <!-- Contenuto Homepage -->
     <div class="container mt-4">
-		<div class="col-md-4">
-                <h2>In Evidenza</h2>
-
-                <!-- Articolo In Evidenza -->
-                <a th:href="@{dettaglio(id=${listaEvidenza[3].id})}" class="article-link">
-                    <div class="card">
-                     <img th:src="@{'image/'+${listaEvidenza[3].immagine}}" class="card-img-top" alt="Immagine Articolo">
-                        <div class="card-body">
-                            <h5 class="card-title" th:text="${listaEvidenza[3].titolo}"></h5>
-                            <p class="card-text" th:text="${listaEvidenza[3].sottotitolo}"></p>
-                            <p class="card-text" th:text="${listaEvidenza[3].autore}+ ' ultimo aggiornamento: ' +${listaEvidenza[3].dataPubblicazione}"></p>
-                            <!-- <p class="card-text" th:text="${a.testo}"></p>  --> 
-                        </div>
-                    </div>
-                </a>
-            </div>
         <!-- Sezione Elenco Articoli e Ultimo Articolo in Evidenza -->
         <h2>Articoli</h2>
         <div class="row"> <!-- chiedere al frontend di creare un div contenitore -->
@@ -87,7 +71,22 @@
             </div>
 
 
-            
+            <div class="col-md-4">
+                <h2>In Evidenza</h2>
+
+                <!-- Articolo In Evidenza -->
+                <a th:href="@{dettaglio(id=${listaEvidenza[3].id})}" class="article-link">
+                    <div class="card">
+                     <img th:src="@{'image/'+${listaEvidenza[3].immagine}}" class="card-img-top" alt="Immagine Articolo">
+                        <div class="card-body">
+                            <h5 class="card-title" th:text="${listaEvidenza[3].titolo}"></h5>
+                            <p class="card-text" th:text="${listaEvidenza[3].sottotitolo}"></p>
+                            <p class="card-text" th:text="${listaEvidenza[3].autore}+ ' ultimo aggiornamento: ' +${listaEvidenza[3].dataPubblicazione}"></p>
+                            <!-- <p class="card-text" th:text="${a.testo}"></p>  --> 
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 
