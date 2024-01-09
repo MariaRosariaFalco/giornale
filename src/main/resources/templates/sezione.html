@@ -53,10 +53,10 @@
     <div class="container mt-4">
 
         <!-- Sezione Elenco Articoli Filtrati -->
+        <h2>Elenco Articoli Filtrati per Categoria</h2>
         <div class="row">
-            <div class="col-md-8">
-                <h2>Elenco Articoli Filtrati per Categoria</h2>
-                    <div th:each="a : ${risultati}" class="card">
+            <div class="col-md-8" >
+                    <div class="card" th:each="a : ${risultati}">
 						<a th:href="@{dettaglio(id=${a.id})}" class="article-link">
                        <img th:src="@{'image/'+${a.immagine}}" class="card-img-top" alt="Immagine Articolo">
                         <div class="card-body">
@@ -64,12 +64,13 @@
                             <p th:text="${a.sottotitolo}" class="card-text"></p>
                             <p th:text="${a.dataPubblicazione}+' di '+${a.autore}" class="card-text"></p>
                           <!--  <p th:text="${a.testo}" class="card-text"></p> -->
-                            </a> 
+                        </div>
+                            </a>
                         </div>
                     </div>
-                </a>
+               
                 <!-- Ripetere questa struttura per ogni articolo-->
-            </div>
+    
 
             <!-- Form di Ricerca -->
             <div class="col-md-4">
@@ -84,7 +85,7 @@
                 </form>
             </div>
         </div>
-    </div>
+    
 
     <!-- Footer -->
     <footer class="text-white text-center py-3 mt-4 barra">
