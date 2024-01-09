@@ -26,17 +26,13 @@ public class SezioneController {
 	@GetMapping
 	public String getPage(Model model, @RequestParam(name="richiesta", required=false) String richiesta, @RequestParam("categoria")String categoria) {
 		
-		List<Articolo> risultati = richiesta==null ? articoloService.getArticoliByCategoria(categoria): articoloService.getArticoloByTagInCategoria(richiesta, categoria);
+	List<Articolo> risultati = richiesta==null ? articoloService.getArticoliByCategoria(categoria): articoloService.getArticoloByTagInCategoria(richiesta, categoria);
 		
-		model.addAttribute("risultati", risultati);
+    model.addAttribute("risultati", risultati);
 		
 		
 		return "sezione";
 	}
-	//nel method del form metti get
-	
-	
-	
 }
 
 

@@ -12,7 +12,7 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark barra1">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" th:href="@{/}">
             <img src="image/Logo1.jpg" alt="Logo Jaita98News">
         </a>
 
@@ -60,7 +60,7 @@
                           <h4 th:text="${a.titolo}" class="card-title"></h4>
                             <p th:text="${a.sottotitolo}" class="card-text"></p>
                             <p th:text="${a.dataPubblicazione}+' di '+${a.autore}" class="card-text"></p>
-                            <p th:text="${a.testo}" class="card-text"></p>
+                          <!--  <p th:text="${a.testo}" class="card-text"></p> -->
                             </a> 
                         </div>
                     </div>
@@ -71,7 +71,7 @@
             <!-- Form di Ricerca -->
             <div class="col-md-4">
                 <h2>Form di Ricerca</h2>
-                <form class="search-form" method="get" action="risultatiRicerca">
+                <form class="search-form" method="get" action="sezione">
                     <div class="form-group">
                         <label for="searchInput">Cerca per tag</label>
                         <input type="text" class="form-control" id="searchInput" name="tag"

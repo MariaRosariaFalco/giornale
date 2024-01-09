@@ -12,7 +12,7 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark barra1">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" th:href="@{/}">
             <img src="image/Logo1.jpg" alt="Logo Jaita98News">
         </a>
 
@@ -51,144 +51,34 @@
     <div class="container mt-4">
         <!-- Sezione Elenco Articoli e Ultimo Articolo in Evidenza -->
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-8" th:each="a:${listaArticoli}">
                 <h2>Articoli</h2>
-                <a href="dettaglio.html" class="article-link" th:each="a:${lista}">
+                <a th:href="@{dettaglio(id=${a.id})}" class="article-link" >
                     <div class="card">
-                        <img th:src="@{'image/'+${a.immagine}" class="card-img-top" alt="Immagine articolo"> <!--arrivate qui-->
+                       <img th:src="@{'image/'+${a.immagine}}" class="card-img-top" alt="Immagine articolo"> 
                         <div class="card-body">
-                            <h5 class="card-title">Titolo</h5>
-                            <p class="card-text">Sottotitolo </p>
-                            <p class="card-text">Autore: Nome dell'autore - Data di pubblicazione: 03 Gennaio 2024</p>
-                            <p class="card-text">Testo dell'articolo...</p>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Ripetere questa struttura per altri articoli -->
-
-                <a href="dettaglio.html" class="article-link">
-                    <div class="card">
-                        <img src="image/news.jpg" class="card-img-top" alt="Immagine Articolo">
-                        <div class="card-body">
-                            <h5 class="card-title">Titolo</h5>
-                            <p class="card-text">Sottotitolo </p>
-                            <p class="card-text">Autore: Nome dell'autore - Data di pubblicazione: 04 Gennaio 2024</p>
-                            <p class="card-text">Testo dell'articolo...</p>
-                        </div>
-                    </div>
-                </a>
-
-
-                <a href="dettaglio.html" class="article-link">
-                    <div class="card">
-                        <img src="/image/news3.jpg" class="card-img-top" alt="Immagine Articolo">
-                        <div class="card-body">
-                            <h5 class="card-title">Titolo</h5>
-                            <p class="card-text">Sottotitolo</p>
-                            <p class="card-text">Autore: Nome dell'autore - Data di pubblicazione: 05 Gennaio 2024</p>
-                            <p class="card-text">Testo dell'articolo...</p>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="dettaglio.html" class="article-link">
-                    <div class="card">
-                        <img src="image/news.jpg" class="card-img-top" alt="Immagine Articolo">
-                        <div class="card-body">
-                            <h5 class="card-title">Titolo</h5>
-                            <p class="card-text">Sottotitolo </p>
-                            <p class="card-text">Autore: Nome dell'autore - Data di pubblicazione: 04 Gennaio 2024</p>
-                            <p class="card-text">Testo dell'articolo...</p>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="dettaglio.html" class="article-link">
-                    <div class="card">
-                        <img src="image/news.jpg" class="card-img-top" alt="Immagine Articolo">
-                        <div class="card-body">
-                            <h5 class="card-title">Titolo</h5>
-                            <p class="card-text">Sottotitolo </p>
-                            <p class="card-text">Autore: Nome dell'autore - Data di pubblicazione: 04 Gennaio 2024</p>
-                            <p class="card-text">Testo dell'articolo...</p>
+                            <h5 class="card-title" th:text="${a.titolo}"></h5>
+                            <p class="card-text" th:text="${a.sottotitolo}"></p>
+                          <p class="card-text" th:text="${a.autore}+ ' ultimo aggiornamento: ' +${a.dataPubblicazione}"></p>
+                           <!-- <p class="card-text" th:text="${a.testo}"></p>  --> 
                         </div>
                     </div>
                 </a>
             </div>
 
-            <div class="col-md-4">
+
+            <div class="col-md-4" th:each="a:${listaEvidenza}">
                 <h2>In Evidenza</h2>
 
                 <!-- Articolo In Evidenza -->
-                <a href="dettaglio.html" class="article-link">
+                <a th:href="@{dettaglio(id=${a.id})}" class="article-link">
                     <div class="card">
-                        <img src="image/news1.gif" class="card-img-top" alt="Immagine Articolo">
+                     <img th:src="@{'image/'+${a.immagine}}" class="card-img-top" alt="Immagine Articolo">
                         <div class="card-body">
-                            <h5 class="card-title">Titolo</h5>
-                            <p class="card-text">Sottotitolo</p>
-                            <p class="card-text">Autore: Nome dell'autore - Data di pubblicazione: 06 Gennaio 2024</p>
-                            <p class="card-text">Testo dell'articolo...</p>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="dettaglio.html" class="article-link">
-                    <div class="card">
-                        <img src="image/news1.gif" class="card-img-top" alt="Immagine Articolo">
-                        <div class="card-body">
-                            <h5 class="card-title">Titolo</h5>
-                            <p class="card-text">Sottotitolo</p>
-                            <p class="card-text">Autore: Nome dell'autore - Data di pubblicazione: 06 Gennaio 2024</p>
-                            <p class="card-text">Testo dell'articolo...</p>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="dettaglio.html" class="article-link">
-                    <div class="card">
-                        <img src="image/news1.gif" class="card-img-top" alt="Immagine Articolo">
-                        <div class="card-body">
-                            <h5 class="card-title">Titolo</h5>
-                            <p class="card-text">Sottotitolo</p>
-                            <p class="card-text">Autore: Nome dell'autore - Data di pubblicazione: 06 Gennaio 2024</p>
-                            <p class="card-text">Testo dell'articolo...</p>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="dettaglio.html" class="article-link">
-                    <div class="card">
-                        <img src="image/news1.gif" class="card-img-top" alt="Immagine Articolo">
-                        <div class="card-body">
-                            <h5 class="card-title">Titolo</h5>
-                            <p class="card-text">Sottotitolo</p>
-                            <p class="card-text">Autore: Nome dell'autore - Data di pubblicazione: 06 Gennaio 2024</p>
-                            <p class="card-text">Testo dell'articolo...</p>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="dettaglio.html" class="article-link">
-                    <div class="card">
-                        <img src="image/news1.gif" class="card-img-top" alt="Immagine Articolo">
-                        <div class="card-body">
-                            <h5 class="card-title">Titolo</h5>
-                            <p class="card-text">Sottotitolo</p>
-                            <p class="card-text">Autore: Nome dell'autore - Data di pubblicazione: 06 Gennaio 2024</p>
-                            <p class="card-text">Testo dell'articolo...</p>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="dettaglio.html" class="article-link">
-                    <div class="card">
-                        <img src="image/news1.gif" class="card-img-top" alt="Immagine Articolo">
-                        <div class="card-body">
-                            <h5 class="card-title">Titolo</h5>
-                            <p class="card-text">Sottotitolo</p>
-                            <p class="card-text">Autore: Nome dell'autore - Data di pubblicazione: 06 Gennaio 2024</p>
-                            <p class="card-text">Testo dell'articolo...</p>
+                            <h5 class="card-title" th:text="${a.titolo}"></h5>
+                            <p class="card-text" th:text="${a.sottotitolo}"></p>
+                            <p class="card-text" th:text="${a.autore}+ ' ultimo aggiornamento: ' +${a.dataPubblicazione}"></p>
+                            <!-- <p class="card-text" th:text="${a.testo}"></p>  --> 
                         </div>
                     </div>
                 </a>
