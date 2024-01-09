@@ -1,5 +1,6 @@
 package it.corso.controller;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,9 +24,9 @@ public class IndexController {
     private ArticoloService articoloService;
 	
 	@GetMapping
-	public String getPage(Model model) {
+	public String getPage(Model model, LocalDate dataPubblicazione) {
 		
-		List<Articolo> listaArticoli = articoloService.getArticoli();
+		List<Articolo> listaArticoli = articoloService.findLatestArticle(dataPubblicazione);
         model.addAttribute("listaArticoli", listaArticoli);
         
         List<Articolo> listaEvidenza = articoloService.getArticoli();

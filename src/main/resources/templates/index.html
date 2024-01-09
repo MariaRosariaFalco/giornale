@@ -53,9 +53,9 @@
     <!-- Contenuto Homepage -->
     <div class="container mt-4">
         <!-- Sezione Elenco Articoli e Ultimo Articolo in Evidenza -->
-        <div class="row">
-            <div class="col-md-8" th:each="a:${listaArticoli}">
-                <h2>Articoli</h2>
+        <div class="row"> <!-- chiedere al frontend di creare un div contenitore -->
+            <div class="col-md-8" th:each="a:${listaArticoli}">    
+				<h2>Articoli</h2> 
                 <a th:href="@{dettaglio(id=${a.id})}" class="article-link" >
                     <div class="card">
                        <img th:src="@{'image/'+${a.immagine}}" class="card-img-top" alt="Immagine articolo"> 

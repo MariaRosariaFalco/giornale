@@ -1,7 +1,10 @@
 package it.corso.service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -65,6 +68,16 @@ public class ArticoloServiceImpl implements ArticoloService {
 		}
 		
 		return articoliFiltrati;
+	}
+
+	@Override
+	public List<Articolo> findLatestArticle(LocalDate dataPubblicazione) {
+		 List<Articolo> articoli = (List<Articolo>) articoloDao.findAll();
+		 Comparator<Articolo> comparator = Comparator.comparing(Articolo::getDataPubblicazione).reversed();
+		 articoli.sort(comparator);
+		 articoli=articoli.stream().filter(a->a.getStato().equals("pubblicato")).collect(Collectors.toList());
+	        return articoli;
+		
 	}
 
 }
