@@ -93,10 +93,10 @@
                 <!-- Form di Ricerca -->
                 <div class="mt-4">
                     <h2>Form di Ricerca</h2>
-                    <form class="search-form" method="get" action="">
+                    <form class="search-form" method="get" th:action="@{/}">
                         <div class="form-group">
                             <label for="searchInput">Cerca per parola</label>
-                            <input type="text" class="form-control" id="searchInput" name="tag"
+                            <input type="text" class="form-control" id="searchInput" name="richiesta"
                                 placeholder="Inserisci una parola chiave">
                         </div>
                         <button type="submit" class="btn">Cerca</button>

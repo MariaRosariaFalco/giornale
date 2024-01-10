@@ -74,11 +74,12 @@
             <!-- Form di Ricerca -->
             <div class="col-md-4">
                 <h2>Form di Ricerca</h2>
-                <form class="search-form" method="get" action="sezione">
+                <form class="search-form" method="get" th:action="@{sezione}">
                     <div class="form-group">
                         <label for="searchInput">Cerca per tag</label>
-                        <input type="text" class="form-control" id="searchInput" name="tag"
+                        <input type="text" class="form-control" id="searchInput" name="richiesta"
                             placeholder="Inserisci un tag">
+                        <input type="hidden" name="categoria" value="politica"/> <!--rendilo dinamico-->
                     </div>
                     <button type="submit" class="btn">Cerca</button>
                 </form>
