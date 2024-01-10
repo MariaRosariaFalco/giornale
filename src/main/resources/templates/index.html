@@ -53,10 +53,14 @@
     <!-- Contenuto Homepage -->
     <div class="container mt-4">
         <!-- Sezione Elenco Articoli e Ultimo Articolo in Evidenza -->
-        <h2>Articoli</h2>
+        <h2 th:text="'News'"></h2>
         <div class="row">
             <!-- Articoli regolari -->
             <div class="col-md-8">
+				<div th:if="${#lists.isEmpty(listaArticoli)}">
+					<img th:src="@{image/ominotrasp.png}" class="img-fluid" alt="Immagine Zero Risultati">
+					<h4>Risultati della ricerca: 0</h4>
+					</div>
                 <div class="mb-4">
                     <!-- Itera sugli articoli regolari -->
                     <div th:each="a:${listaArticoli}">
@@ -77,7 +81,7 @@
 
             <!-- Articolo in Evidenza -->
             <div class="col-md-4">
-                <h2>In Evidenza</h2>
+                <h2 th:text="'In Evidenza'"></h2>
                 <!-- Articolo In Evidenza -->
                 <a th:href="@{dettaglio(id=${listaEvidenza[3].id})}" class="article-link">
                     <div class="card">

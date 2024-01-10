@@ -54,9 +54,13 @@
     <div class="container mt-4">
 
         <!-- Sezione Elenco Articoli Filtrati -->
-        <h2>Elenco Articoli Filtrati per Categoria</h2>
+        <h2 th:text="'Articoli di '+ ${categoria.substring(0, 1).toUpperCase() + categoria.substring(1).toLowerCase()}"></h2>
         <div class="row">
             <div class="col-md-8">
+				<div th:if="${#lists.isEmpty(risultati)}">
+					<img th:src="@{image/ominotrasp.png}" class="img-fluid" alt="Immagine Zero Risultati">
+					<h4>Risultati della ricerca: 0</h4>
+					</div>
                 <div class="card" th:each="a : ${risultati}">
                     <a th:href="@{dettaglio(id=${a.id})}" class="article-link">
                         <img th:src="@{'image/'+${a.immagine}}" class="card-img-top" alt="Immagine Articolo">
