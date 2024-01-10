@@ -79,7 +79,7 @@
                         <label for="searchInput">Cerca per tag</label>
                         <input type="text" class="form-control" id="searchInput" name="richiesta"
                             placeholder="Inserisci un tag">
-                        <input type="hidden" name="categoria" value="politica"/> <!--rendilo dinamico-->
+                        <input type="hidden" name="categoria" th:value="${categoria}"/> 
                     </div>
                     <button type="submit" class="btn">Cerca</button>
                 </form>

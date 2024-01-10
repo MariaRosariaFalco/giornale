@@ -24,14 +24,11 @@ public class SezioneController {
 	 private ArticoloService articoloService;
 	
 	@GetMapping
-	public String getPage(Model model, @RequestParam(name="richiesta", required=false) String richiesta, @RequestParam(name="categoria", required=false)String categoria 
-			//, @RequestParam(name="id", required=false) Integer o int id
-			) {
+	public String getPage(Model model, @RequestParam(name="richiesta", required=false) String richiesta, @RequestParam(name="categoria", required=false)String categoria) {
 		
 	List<Articolo> risultati = richiesta==null ? articoloService.getArticoliByCategoria(categoria): articoloService.getArticoloByTagInCategoria(richiesta, categoria);
-	//come trasmetto la parola del tag per recuperare id dell'articolo? come passo la categoria? per ora messa come opzionale perché andava in errore
-	//model.addAttribute("id", id);
-	model.addAttribute(categoria);
+
+	model.addAttribute("categoria", categoria);
     model.addAttribute("risultati", risultati);
 		
 		
