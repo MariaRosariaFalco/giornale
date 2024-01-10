@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -10,7 +11,7 @@
 </head>
 
 <body>
-    <!-- Navbar -->
+     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark barra1">
         <a class="navbar-brand" th:href="@{/}">
             <img src="image/Logo1.jpg" alt="Logo Jaita98News">
@@ -28,7 +29,7 @@
                         Categorie
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                       <a class="dropdown-item"  th:href="@{sezione(categoria='cronaca')}">Cronaca</a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='cronaca')}">Cronaca</a>
                         <a class="dropdown-item" th:href="@{sezione(categoria='politica')}">Politica</a>
                         <a class="dropdown-item" th:href="@{sezione(categoria='sport')}">Sport</a>
                         <a class="dropdown-item" th:href="@{sezione(categoria='economia')}">Economia</a>
@@ -37,13 +38,13 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contatti.html">Contatti</a>
+                    <a class="nav-link" th:href="@{contatti}">Contatti</a>
                 </li>
                  <li class="nav-item">
-                    <a class="nav-link" href="chisiamo.html">Chi Siamo</a>
+                    <a class="nav-link" th:href="@{chisiamo}">Chi Siamo</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="lavoro.html">Lavora con noi</a>
+                    <a class="nav-link" th:href="@{lavoro}">Lavora con noi</a>
                 </li>
             </ul>
         </div>
@@ -55,22 +56,20 @@
         <!-- Sezione Elenco Articoli Filtrati -->
         <h2>Elenco Articoli Filtrati per Categoria</h2>
         <div class="row">
-            <div class="col-md-8" >
-                    <div class="card" th:each="a : ${risultati}">
-						<a th:href="@{dettaglio(id=${a.id})}" class="article-link">
-                       <img th:src="@{'image/'+${a.immagine}}" class="card-img-top" alt="Immagine Articolo">
+            <div class="col-md-8">
+                <div class="card" th:each="a : ${risultati}">
+                    <a th:href="@{dettaglio(id=${a.id})}" class="article-link">
+                        <img th:src="@{'image/'+${a.immagine}}" class="card-img-top" alt="Immagine Articolo">
                         <div class="card-body">
-                          <h4 th:text="${a.titolo}" class="card-title"></h4>
+                            <h4 th:text="${a.titolo}" class="card-title"></h4>
                             <p th:text="${a.sottotitolo}" class="card-text"></p>
                             <p th:text="${a.dataPubblicazione}+' di '+${a.autore}" class="card-text"></p>
-                          <!--  <p th:text="${a.testo}" class="card-text"></p> -->
                         </div>
-                            </a>
-                        </div>
-                    </div>
-               
-                <!-- Ripetere questa struttura per ogni articolo-->
-    
+                    </a>
+                </div>
+            </div>
+
+            <!-- Ripetere questa struttura per ogni articolo-->
 
             <!-- Form di Ricerca -->
             <div class="col-md-4">
@@ -85,7 +84,7 @@
                 </form>
             </div>
         </div>
-    
+    </div>
 
     <!-- Footer -->
     <footer class="text-white text-center py-3 mt-4 barra">

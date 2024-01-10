@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -11,9 +11,9 @@
 </head>
 
 <body>
-    <!-- Navbar -->
+     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark barra1">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" th:href="@{/}">
             <img src="image/Logo1.jpg" alt="Logo Jaita98News">
         </a>
 
@@ -29,22 +29,22 @@
                         Categorie
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="sezione.html?categoria=cronaca">Cronaca</a>
-                        <a class="dropdown-item" href="sezione.html?categoria=politica">Politica</a>
-                        <a class="dropdown-item" href="sezione.html?categoria=sport">Sport</a>
-                        <a class="dropdown-item" href="sezione.html?categoria=intrattenimento">Economia</a>
-                        <a class="dropdown-item" href="sezione.html?categoria=cultura">Cultura</a>
-                        <a class="dropdown-item" href="sezione.html?categoria=tecnologia">Scienza e Tecnologia</a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='cronaca')}">Cronaca</a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='politica')}">Politica</a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='sport')}">Sport</a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='economia')}">Economia</a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='cultura')}">Cultura</a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='scienza e tecnologia')}">Scienza e Tecnologia</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contatti.html">Contatti</a>
+                    <a class="nav-link" th:href="@{contatti}">Contatti</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" th:href="@{chisiamo}">Chi Siamo</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="chisiamo.html">Chi Siamo</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="lavoro.html">Lavora con noi</a>
+                    <a class="nav-link" th:href="@{lavoro}">Lavora con noi</a>
                 </li>
             </ul>
         </div>

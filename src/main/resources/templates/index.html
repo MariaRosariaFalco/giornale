@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -10,7 +11,7 @@
 </head>
 
 <body>
-    <!-- Navbar -->
+     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark barra1">
         <a class="navbar-brand" th:href="@{/}">
             <img src="image/Logo1.jpg" alt="Logo Jaita98News">
@@ -37,55 +38,70 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contatti.html">Contatti</a>
+                    <a class="nav-link" th:href="@{contatti}">Contatti</a>
                 </li>
                  <li class="nav-item">
-                    <a class="nav-link" href="chisiamo.html">Chi Siamo</a>
+                    <a class="nav-link" th:href="@{chisiamo}">Chi Siamo</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="lavoro.html">Lavora con noi</a>
+                    <a class="nav-link" th:href="@{lavoro}">Lavora con noi</a>
                 </li>
             </ul>
         </div>
     </nav>
 
-
     <!-- Contenuto Homepage -->
     <div class="container mt-4">
         <!-- Sezione Elenco Articoli e Ultimo Articolo in Evidenza -->
         <h2>Articoli</h2>
-        <div class="row"> <!-- chiedere al frontend di creare un div contenitore -->
-            <div class="col-md-8" th:each="a:${listaArticoli}">    
-				 <p>&nbsp;</p>
-                <a th:href="@{dettaglio(id=${a.id})}" class="article-link" >
-                    <div class="card">
-                       <img th:src="@{'image/'+${a.immagine}}" class="card-img-top" alt="Immagine articolo"> 
-                        <div class="card-body">
-                            <h5 class="card-title" th:text="${a.titolo}"></h5>
-                            <p class="card-text" th:text="${a.sottotitolo}"></p>
-                          <p class="card-text" th:text="${a.autore}+ ' ultimo aggiornamento: ' +${a.dataPubblicazione}"></p>
-                           <!-- <p class="card-text" th:text="${a.testo}"></p>  --> 
-                        </div>
+        <div class="row">
+            <!-- Articoli regolari -->
+            <div class="col-md-8">
+                <div class="mb-4">
+                    <!-- Itera sugli articoli regolari -->
+                    <div th:each="a:${listaArticoli}">
+                        <p>&nbsp;</p>
+                        <a th:href="@{dettaglio(id=${a.id})}" class="article-link">
+                            <div class="card mb-4">
+                                <img th:src="@{'image/'+${a.immagine}}" class="card-img-top" alt="Immagine articolo">
+                                <div class="card-body">
+                                    <h5 class="card-title" th:text="${a.titolo}"></h5>
+                                    <p class="card-text" th:text="${a.sottotitolo}"></p>
+                                    <p class="card-text" th:text="${a.autore}+ ' ultimo aggiornamento: ' +${a.dataPubblicazione}"></p>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </a>
+                </div>
             </div>
 
-
+            <!-- Articolo in Evidenza -->
             <div class="col-md-4">
                 <h2>In Evidenza</h2>
-
                 <!-- Articolo In Evidenza -->
                 <a th:href="@{dettaglio(id=${listaEvidenza[3].id})}" class="article-link">
                     <div class="card">
-                     <img th:src="@{'image/'+${listaEvidenza[3].immagine}}" class="card-img-top" alt="Immagine Articolo">
+                        <img th:src="@{'image/'+${listaEvidenza[3].immagine}}" class="card-img-top" alt="Immagine Articolo">
                         <div class="card-body">
                             <h5 class="card-title" th:text="${listaEvidenza[3].titolo}"></h5>
                             <p class="card-text" th:text="${listaEvidenza[3].sottotitolo}"></p>
                             <p class="card-text" th:text="${listaEvidenza[3].autore}+ ' ultimo aggiornamento: ' +${listaEvidenza[3].dataPubblicazione}"></p>
-                            <!-- <p class="card-text" th:text="${a.testo}"></p>  --> 
                         </div>
                     </div>
                 </a>
+
+                <!-- Form di Ricerca -->
+                <div class="mt-4">
+                    <h2>Form di Ricerca</h2>
+                    <form class="search-form" method="get" action="sezione">
+                        <div class="form-group">
+                            <label for="searchInput">Cerca per parola</label>
+                            <input type="text" class="form-control" id="searchInput" name="tag"
+                                placeholder="Inserisci una parola chiave">
+                        </div>
+                        <button type="submit" class="btn">Cerca</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -99,11 +115,11 @@
         <p>&copy; 2024 Jaita98News. Tutti i diritti riservati.</p>
     </footer>
 
-
-    <!--file JavaScript di Bootstrap -->
+    <!-- File JavaScript di Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
+

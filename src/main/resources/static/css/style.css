@@ -108,7 +108,7 @@ a:link {
     background-color: #202038;
     color: #FFFFFF80;
     padding: 20px 0;
-    height: 200px;
+    height: 150px;
     /*MODIFICA APPORTATA DOPO PUSH*/
     text-align: center;
     overflow: hidden;
@@ -228,4 +228,8 @@ a:link {
 
 .title-margin {
     margin-bottom: 20px;
+}
+
+.mt-4{
+	padding-top: 20px;
 }
