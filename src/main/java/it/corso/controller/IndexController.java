@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import it.corso.model.Articolo;
 import it.corso.service.ArticoloService;
@@ -24,9 +25,9 @@ public class IndexController {
     private ArticoloService articoloService;
 	
 	@GetMapping
-	public String getPage(Model model, LocalDate dataPubblicazione) {
+	public String getPage(Model model, LocalDate dataPubblicazione, @RequestParam(name="richiesta", required=false) String richiesta) {
 		
-		List<Articolo> listaArticoli = articoloService.findLatestArticle(dataPubblicazione);
+		List<Articolo> listaArticoli = richiesta==null ? articoloService.findLatestArticle(dataPubblicazione): articoloService.getArticoliByTag(richiesta);
         model.addAttribute("listaArticoli", listaArticoli);
         
         List<Articolo> listaEvidenza = articoloService.getArticoli();

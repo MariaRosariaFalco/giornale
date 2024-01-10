@@ -63,7 +63,7 @@
                         <div class="card-body">
                             <h4 th:text="${a.titolo}" class="card-title"></h4>
                             <p th:text="${a.sottotitolo}" class="card-text"></p>
-                            <p th:text="${a.dataPubblicazione}+' di '+${a.autore}" class="card-text"></p>
+                            <p th:text="${#temporals.format(a.dataPubblicazione,'dd-MM-yyyy')}+' di '+${a.autore}" class="card-text"></p>
                         </div>
                     </a>
                 </div>
