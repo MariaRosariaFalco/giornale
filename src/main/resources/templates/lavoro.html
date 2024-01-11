@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="icon" type="image/png" href="image/favicon-32x32.png">
-    <title>Lavora con noi</title>
+    <link rel="icon" type="image/png" th:href="@{image/favicon-32x32.png}">
+    <title th:text="'Lavora con noi'"></title>
     <link rel="stylesheet" type="text/css" th:href="@{css/style.css}">
 </head>
 
@@ -14,7 +14,7 @@
      <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark barra1">
         <a class="navbar-brand" th:href="@{/}">
-            <img src="image/Logo1.jpg" alt="Logo Jaita98News">
+            <img th:src="@{image/Logo1.jpg}" alt="Logo Jaita98News">
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -24,27 +24,27 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Categorie
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="'Categorie'">
+                        
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" th:href="@{sezione(categoria='cronaca')}">Cronaca</a>
-                        <a class="dropdown-item" th:href="@{sezione(categoria='politica')}">Politica</a>
-                        <a class="dropdown-item" th:href="@{sezione(categoria='sport')}">Sport</a>
-                        <a class="dropdown-item" th:href="@{sezione(categoria='economia')}">Economia</a>
-                        <a class="dropdown-item" th:href="@{sezione(categoria='cultura')}">Cultura</a>
-                        <a class="dropdown-item" th:href="@{sezione(categoria='scienza e tecnologia')}">Scienza e Tecnologia</a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='cronaca')}" th:text="'Cronaca'"></a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='politica')}" th:text="'Politica'"></a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='sport')}" th:text="'Sport'"></a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='economia')}" th:text="'Economia'"></a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='cultura')}" th:text="'Cultura'"></a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='scienza e tecnologia')}" th:text="'Scienza e Tecnologia'"></a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{contatti}">Contatti</a>
+                    <a class="nav-link" th:href="@{contatti}" th:text="'Contatti'"></a>
                 </li>
                  <li class="nav-item">
-                    <a class="nav-link" th:href="@{chisiamo}">Chi Siamo</a>
+                    <a class="nav-link" th:href="@{chisiamo}" th:text="'Chi Siamo'"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{lavoro}">Lavora con noi</a>
+                    <a class="nav-link" th:href="@{lavoro}" th:text="'Lavora con noi'"></a>
                 </li>
             </ul>
         </div>
@@ -52,9 +52,9 @@
 
     <!-- Contenuto della pagina -->
     <div class="container container-with-margin">
-        <h1 class="title-margin">Lavora con Noi</h1>
+        <h1 class="title-margin" th:text="'Lavora con Noi'"></h1>
         <div style="float: left; margin-right: 15px;">
-            <img src="image/icon.gif" alt="Lavora con Noi Image" class="img-fluid"
+            <img th:src="@{image/icon.gif}" alt="Lavora con Noi Image" class="img-fluid"
                 style="max-width: 60px; border-radius: 10px;">
         </div>
         <p>Benvenuta/o nella sezione "Lavora con Noi" del nostro sito. Siamo sempre alla ricerca di persone
@@ -66,34 +66,34 @@
     <div class="card-container">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Sviluppatore Web</h5>
+                <h5 class="card-title" th:text="'Sviluppatore Web'"></h5>
                 <p class="card-text">Siamo alla ricerca di talenti appassionati nel campo del giornalismo online e dello
                     sviluppo web per ampliare il nostro team. Se hai una
                     passione per la scrittura coinvolgente e un'esperienza comprovata nello sviluppo web, potresti
                     essere la persona giusta per unirti a noi.</p>
-                <a th:href="@{contatti}" class="btn">Candidati</a>
+                <a th:href="@{contatti}" class="btn" th:text="'Candidati'"></a>
             </div>
         </div>
 
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Graphic Designer</h5>
+                <h5 class="card-title" th:text="'Graphic Designer'"></h5>
                 <p class="card-text">Stiamo cercando un Graphic Designer creativo e appassionato per arricchire il
                     nostro team. Se hai una passione per la progettazione visiva e desideri contribuire alla
                     creazione di contenuti coinvolgenti e accattivanti per il nostro giornale, questa potrebbe essere
                     l'opportunità professionale che stai cercando</p>
-                <a th:href="@{contatti}" class="btn">Candidati</a>
+                <a th:href="@{contatti}" class="btn" th:text="'Candidati'"></a>
             </div>
         </div>
 
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Copywriter</h5>
+                <h5 class="card-title" th:text="'Copywriter'"></h5>
                 <p class="card-text">Siamo alla ricerca di un Copywriter dinamico e creativo per arricchire il nostro
                     team. Se hai una passione per la scrittura accattivante, la capacità di creare contenuti
                     coinvolgenti e il desiderio di contribuire alla narrazione delle notizie, questa potrebbe essere
                     l'opportunità ideale per te.</p>
-                <a th:href="@{contatti}" class="btn">Candidati</a>
+                <a th:href="@{contatti}" class="btn" th:text="'Candidati'"></a>
             </div>
         </div>
 
@@ -107,19 +107,19 @@
             <div class="row">
                 <div class="col-md-6">
                     <!-- Contenuto del footer (informazioni) -->
-                    <p>Partita IVA: 00123456789</p>
-                    <p>Email: info@jaita98news.com</p>
-                    <p>Telefono: +39 0123 456789</p>
-                    <p>Indirizzo: Via della Stampa, 22, 00100 Roma, Italia</p>
-                    <p>&copy; 2024 Jaita98News. Tutti i diritti riservati.</p>
+                    <p th:text="'Partita IVA: 00123456789'"></p>
+                    <p th:text="'Email: info@jaita98news.com'"></p>
+                    <p th:text="'Telefono: +39 0123 456789'"></p>
+                    <p th:text="'Indirizzo: Via della Stampa, 22, 00100 Roma, Italia'"></p>
+                    <p th:text="'&copy; 2024 Jaita98News. Tutti i diritti riservati.'"></p>
                 </div>
                 <div class="col-md-6 text-center">
-                    <p>Per essere sempre aggiornato, seguici sui social!</p>
+                    <p th:text="'Per essere sempre aggiornato, seguici sui social!'"></p>
                     <!-- Icone social -->
                     <div class="social-icons">
-                        <a href="#"><img src="image/facebook.png" alt="Facebook"></a>
-                        <a href="#"><img src="image/twitter.png" alt="Twitter"></a>
-                        <a href="https://www.instagram.com/jaita98news/" target="_blank"><img src="image/instagram.png" alt="Instagram"></a>
+                        <a href="#"><img th:src="@{image/facebook.png}" alt="Facebook"></a>
+                        <a href="#"><img th:src="@{image/twitter.png}" alt="Twitter"></a>
+                        <a href="https://www.instagram.com/jaita98news/" target="_blank"><img th:src="@{image/instagram.png}" alt="Instagram"></a>
                     </div>
                 </div>
             </div>
