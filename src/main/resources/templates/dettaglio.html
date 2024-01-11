@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="icon" type="image/png" href="image/favicon-32x32.png">
-    <title>Dettaglio Articolo</title>
+    <link rel="icon" type="image/png" th:href="@{image/favicon-32x32.png}">
+    <title th:text="'Dettaglio Articolo'"></title>
     <link rel="stylesheet" type="text/css" th:href="@{css/style.css}">
 </head>
 
@@ -14,7 +14,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark barra1">
         <a class="navbar-brand" th:href="@{/}">
-            <img src="image/Logo1.jpg" alt="Logo Jaita98News">
+            <img th:src="@{image/Logo1.jpg}" alt="Logo Jaita98News">
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -24,27 +24,26 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Categorie
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="'Categorie'">
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" th:href="@{sezione(categoria='cronaca')}">Cronaca</a>
-                        <a class="dropdown-item" th:href="@{sezione(categoria='politica')}">Politica</a>
-                        <a class="dropdown-item" th:href="@{sezione(categoria='sport')}">Sport</a>
-                        <a class="dropdown-item" th:href="@{sezione(categoria='economia')}">Economia</a>
-                        <a class="dropdown-item" th:href="@{sezione(categoria='cultura')}">Cultura</a>
-                        <a class="dropdown-item" th:href="@{sezione(categoria='scienza e tecnologia')}">Scienza e Tecnologia</a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='cronaca')}" th:text="'Cronaca'"></a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='politica')}" th:text="'Politica'"></a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='sport')}" th:text="'Sport'"></a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='economia')}" th:text="'Economia'"></a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='cultura')}" th:text="'Cultura'"></a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='scienza e tecnologia')}" th:text="'Scienza e Tecnologia'"></a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{contatti}">Contatti</a>
+                    <a class="nav-link" th:href="@{contatti}" th:text="'Contatti'"></a>
                 </li>
                  <li class="nav-item">
-                    <a class="nav-link" th:href="@{chisiamo}">Chi Siamo</a>
+                    <a class="nav-link" th:href="@{chisiamo}" th:text="'Chi Siamo'"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{lavoro}">Lavora con noi</a>
+                    <a class="nav-link" th:href="@{lavoro}" th:text="'Lavora con noi'"></a>
                 </li>
             </ul>
         </div>
@@ -54,13 +53,13 @@
     <div class="container mt-4">
         <div class="row">
             <div class="col-md-12">
-                <h2>Dettaglio Articolo</h2>
+                <h2 th:text="'Dettaglio Articolo'"></h2>
                 <div class="card1">
                     <!--in caso spostare di nuovo immagine qua -->
                     <div class="card-body">
-                        <h4 class="card-title" th:text="${listaArticoli[id-1].titolo}"> </h4> 
+                        <h4 class="card-title" th:text="${listaArticoli[id-1].titolo}"></h4> 
                         <img th:src="@{'image/'+${listaArticoli[id-1].immagine}}"   class="card-img-top" alt="Immagine Articolo">     
-                        <p class="card-text" th:text="${listaArticoli[id-1].sottotitolo}"> </p>                          
+                        <p class="card-text" th:text="${listaArticoli[id-1].sottotitolo}"></p>                          
                         <p class="card-text" th:text="${listaArticoli[id-1].autore}+ ' ultimo aggiornamento: ' +${#temporals.format(listaArticoli[id-1].dataPubblicazione,'dd-MM-yyyy')}"></p>
                         <p class="card-text" th:text="${listaArticoli[id-1].testo}"></p>
                        <!--<p class="card-text" th:text="${listaArticoli[id-1].tag}"></p> -->  
@@ -76,19 +75,19 @@
             <div class="row">
                 <div class="col-md-6">
                     <!-- Contenuto del footer (informazioni) -->
-                    <p>Partita IVA: 00123456789</p>
-                    <p>Email: info@jaita98news.com</p>
-                    <p>Telefono: +39 0123 456789</p>
-                    <p>Indirizzo: Via della Stampa, 22, 00100 Roma, Italia</p>
-                    <p>&copy; 2024 Jaita98News. Tutti i diritti riservati.</p>
+                    <p th:text="'Partita IVA: 00123456789'"></p>
+                    <p th:text="'Email: info@jaita98news.com'"></p>
+                    <p th:text="'Telefono: +39 0123 456789'"></p>
+                    <p th:text="'Indirizzo: Via della Stampa, 22, 00100 Roma, Italia'"></p>
+                    <p th:text="'&copy; 2024 Jaita98News. Tutti i diritti riservati.'"></p>
                 </div>
                 <div class="col-md-6 text-center">
-                    <p>Per essere sempre aggiornato, seguici sui social!</p>
+                     <p th:text="'Per essere sempre aggiornato, seguici sui social!'"></p>
                     <!-- Icone social -->
                     <div class="social-icons">
-                        <a href="#"><img src="image/facebook.png" alt="Facebook"></a>
-                        <a href="#"><img src="image/twitter.png" alt="Twitter"></a>
-                        <a href="https://www.instagram.com/jaita98news/" target="_blank"><img src="image/instagram.png" alt="Instagram"></a>
+                        <a href="#"><img th:src="@{image/facebook.png}" alt="Facebook"></a>
+                        <a href="#"><img th:src="@{image/twitter.png}" alt="Twitter"></a>
+                        <a href="https://www.instagram.com/jaita98news/" target="_blank"><img th:src="@{image/instagram.png}" alt="Instagram"></a>
                     </div>
                 </div>
             </div>

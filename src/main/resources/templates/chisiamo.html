@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="icon" type="image/png" href="image/favicon-32x32.png">
-    <title>Chi Siamo</title>
+    <link rel="icon" type="image/png" th:href="@{image/favicon-32x32.png}">
+    <title th:text="'Chi Siamo'"></title>
     <link rel="stylesheet" type="text/css" th:href="@{css/style.css}">
 </head>
 
@@ -14,7 +14,7 @@
      <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark barra1">
         <a class="navbar-brand" th:href="@{/}">
-            <img src="image/Logo1.jpg" alt="Logo Jaita98News">
+            <img th:src="@{image/Logo1.jpg}" alt="Logo Jaita98News">
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -24,27 +24,26 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Categorie
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="'Categorie'">
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" th:href="@{sezione(categoria='cronaca')}">Cronaca</a>
-                        <a class="dropdown-item" th:href="@{sezione(categoria='politica')}">Politica</a>
-                        <a class="dropdown-item" th:href="@{sezione(categoria='sport')}">Sport</a>
-                        <a class="dropdown-item" th:href="@{sezione(categoria='economia')}">Economia</a>
-                        <a class="dropdown-item" th:href="@{sezione(categoria='cultura')}">Cultura</a>
-                        <a class="dropdown-item" th:href="@{sezione(categoria='scienza e tecnologia')}">Scienza e Tecnologia</a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='cronaca')}" th:text="'Cronaca'"></a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='politica')}" th:text="'Politica'"></a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='sport')}" th:text="'Sport'"></a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='economia')}" th:text="'Economia'"></a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='cultura')}" th:text="'Cultura'"></a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='scienza e tecnologia')}" th:text="'Scienza e Tecnologia'"></a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{contatti}">Contatti</a>
+                    <a class="nav-link" th:href="@{contatti}" th:text="'Contatti'"></a>
                 </li>
                  <li class="nav-item">
-                    <a class="nav-link" th:href="@{chisiamo}">Chi Siamo</a>
+                    <a class="nav-link" th:href="@{chisiamo}" th:text="'Chi Siamo'"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{lavoro}">Lavora con noi</a>
+                    <a class="nav-link" th:href="@{lavoro}" th:text="'Lavora con noi'"></a>
                 </li>
             </ul>
         </div>
@@ -52,19 +51,19 @@
 
     <!-- Contenuto della pagina -->
     <div class="container mt-4">
-        <h1>Chi Siamo</h1>
-        <p>
-            Benvenuti su Jaita98News, la vostra fonte affidabile per le ultime notizie e informazioni. Siamo un team
+        <h1 th:text="'Chi Siamo'"></h1>
+        <p th:text="'Benvenuti su Jaita98News, la vostra fonte affidabile per le ultime notizie e informazioni. Siamo un team
             di giornalisti, sviluppatori web, designer grafici e scrittori dedicati a fornire
-            contenuti informativi e coinvolgenti.
+            contenuti informativi e coinvolgenti.'">
+            
         </p>
-        <p>
-            La nostra missione è informare e ispirare il nostro pubblico, coprendo una vasta gamma di argomenti.
+        <p>La nostra missione è informare e ispirare il nostro pubblico, coprendo una vasta gamma di argomenti.
             Dall'attualità alla cultura, dalla politica allo sport, dalla scienza alla tecnologia ci impegniamo a
             fornirvi notizie accurate, analisi approfondite e opinioni autorevoli.
+       
         </p>
 
-        <h2>Il Nostro Team</h2>
+        <h2 th:text="'Il Nostro Team'"></h2>
 
         <!-- Prima riga di membri del team -->
         <div class="row">
@@ -74,7 +73,7 @@
                     <img th:src="@{image/FotoJessica.png}" class="mr-3" alt="Team Member 1 Image"
                         style="max-width: 100px;">
                     <div class="media-body">
-                        <h5 class="mt-0">Jessica Marchionne</h5>
+                        <h5 class="mt-0" th:text="'Jessica Marchionne'"></h5>
                         <p>Copywriter<br />
                             Front-end</p>
                     </div>
@@ -87,7 +86,7 @@
                     <img th:src="@{image/fotoMR.png}" class="mr-3" alt="Team Member 2 Image"
                         style="max-width: 100px;">
                     <div class="media-body">
-                        <h5 class="mt-0">Maria Rosaria Vitiello</h5>
+                        <h5 class="mt-0" th:text="'Maria Rosaria Vitiello'"></h5>
                         <p>Graphic Designer<br />
                             Front-end</p>
                     </div>
@@ -100,7 +99,7 @@
                     <img th:src="@{image/fotoAnna.png}" class="mr-3" alt="Team Member 3 Image"
                         style="max-width: 100px;">
                     <div class="media-body">
-                        <h5 class="mt-0">Anna Criscuoli</h5>
+                        <h5 class="mt-0" th:text="'Anna Criscuoli'"></h5>
                         <p>Giornalista<br />
                             Back-end</p>
                     </div>
@@ -116,7 +115,7 @@
                     <img th:src="@{image/FotoFalco.png}" class="mr-3" alt="Team Member 4 Image"
                         style="max-width: 100px;">
                     <div class="media-body">
-                        <h5 class="mt-0">Mariarosaria Falco</h5>
+                        <h5 class="mt-0" th:text="'Mariarosaria Falco'"></h5>
                         <p>Redattrice<br />
                             Back-end</p>
                     </div>
@@ -129,7 +128,7 @@
                     <img th:src="@{image/fotoMaryM.png}" class="mr-3" alt="Team Member 5 Image"
                         style="max-width: 100px;">
                     <div class="media-body">
-                        <h5 class="mt-0">Marianna Masala</h5>
+                        <h5 class="mt-0" th:text="'Marianna Masala'"></h5>
                         <p>Sviluppatrice Web<br />
                             Back-end</p>
                     </div>
@@ -142,7 +141,7 @@
                     <img th:src="@{image/FotoMichela.png}" class="mr-3" alt="Team Member 6 Image"
                         style="max-width: 100px;">
                     <div class="media-body">
-                        <h5 class="mt-0">Michela Pedditzi</h5>
+                        <h5 class="mt-0" th:text="'Michela Pedditzi'"></h5>
                         <p>Giornalista<br />
                             Back-end</p>
                     </div>
@@ -150,9 +149,8 @@
             </div>
         </div>
         <br />
-        <p>
-            Grazie per la vostra fiducia e il vostro continuo supporto. Restate connessi con noi per le ultime
-            notizie e storie interessanti!
+        <p th:text="'Grazie per la vostra fiducia e il vostro continuo supporto. Restate connessi con noi per le ultime
+            notizie e storie interessanti!'">
         </p>
 
 
@@ -164,19 +162,19 @@
             <div class="row">
                 <div class="col-md-6">
                     <!-- Contenuto del footer (informazioni) -->
-                    <p>Partita IVA: 00123456789</p>
-                    <p>Email: info@jaita98news.com</p>
-                    <p>Telefono: +39 0123 456789</p>
-                    <p>Indirizzo: Via della Stampa, 22, 00100 Roma, Italia</p>
-                    <p>&copy; 2024 Jaita98News. Tutti i diritti riservati.</p>
+                    <p th:text="'Partita IVA: 00123456789'"></p>
+                    <p th:text="'Email: info@jaita98news.com'"></p>
+                    <p th:text="'Telefono: +39 0123 456789'"></p>
+                    <p th:text="'Indirizzo: Via della Stampa, 22, 00100 Roma, Italia'"></p>
+                    <p th:text="'&copy; 2024 Jaita98News. Tutti i diritti riservati.'"></p>
                 </div>
                 <div class="col-md-6 text-center">
-                    <p>Per essere sempre aggiornato, seguici sui social!</p>
+                    <p th:text="'Per essere sempre aggiornato, seguici sui social!'"></p>
                     <!-- Icone social -->
                     <div class="social-icons">
-                        <a href="#"><img src="image/facebook.png" alt="Facebook"></a>
-                        <a href="#"><img src="image/twitter.png" alt="Twitter"></a>
-                        <a href="https://www.instagram.com/jaita98news/" target="_blank"><img src="image/instagram.png" alt="Instagram"></a>
+                        <a href="#"><img th:src="@{image/facebook.png}" alt="Facebook"></a>
+                        <a href="#"><img th:src="@{image/twitter.png}" alt="Twitter"></a>
+                        <a href="https://www.instagram.com/jaita98news/" target="_blank"><img th:src="@{image/instagram.png}" alt="Instagram"></a>
                     </div>
                 </div>
             </div>

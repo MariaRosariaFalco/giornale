@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="icon" type="image/png" href="image/favicon-32x32.png">
-    <title>Contatti</title>
+    <link rel="icon" type="image/png" th:href="@{image/favicon-32x32.png}">
+    <title th:text="'Contatti'"></title>
     <link rel="stylesheet" type="text/css" th:href="@{css/style.css}">
 </head>
 
@@ -14,7 +14,7 @@
      <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark barra1">
         <a class="navbar-brand" th:href="@{/}">
-            <img src="image/Logo1.jpg" alt="Logo Jaita98News">
+            <img th:src="@{image/Logo1.jpg}" alt="Logo Jaita98News">
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -24,27 +24,26 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Categorie
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="'Categoria'">
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" th:href="@{sezione(categoria='cronaca')}">Cronaca</a>
-                        <a class="dropdown-item" th:href="@{sezione(categoria='politica')}">Politica</a>
-                        <a class="dropdown-item" th:href="@{sezione(categoria='sport')}">Sport</a>
-                        <a class="dropdown-item" th:href="@{sezione(categoria='economia')}">Economia</a>
-                        <a class="dropdown-item" th:href="@{sezione(categoria='cultura')}">Cultura</a>
-                        <a class="dropdown-item" th:href="@{sezione(categoria='scienza e tecnologia')}">Scienza e Tecnologia</a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='cronaca')}" th:text="'Cronaca'"></a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='politica')}" th:text="'Politica'"></a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='sport')}" th:text="'Sport'"></a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='economia')}" th:text="'Economia'"></a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='cultura')}" th:text="'Cultura'"></a>
+                        <a class="dropdown-item" th:href="@{sezione(categoria='scienza e tecnologia')}" th:text="'Scienza e Tecnologia'"></a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{contatti}">Contatti</a>
+                    <a class="nav-link" th:href="@{contatti}" th:text="'Contatti'"></a>
                 </li>
                  <li class="nav-item">
-                    <a class="nav-link" th:href="@{chisiamo}">Chi Siamo</a>
+                    <a class="nav-link" th:href="@{chisiamo}" th:text="'Chi Siamo'"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{lavoro}">Lavora con noi</a>
+                    <a class="nav-link" th:href="@{lavoro}" th:text="'Lavora con noi'"></a>
                 </li>
             </ul>
         </div>
@@ -55,29 +54,28 @@
         <div class="row">
             <div class="col-md-8">
                 <h2 th:text="Contattaci"></h2>
-                <p>Puoi contattarci nei seguenti modi:</p>
+                <p th:text="'Puoi contattarci nei seguenti modi:'"></p>
                 <ul>
-                    <li>Email: info@jaita98news.com</li>
-                    <li>Telefono: +39 0123 456789</li>
-                    <li>Indirizzo: Via della Stampa, 22, 00100 Roma, Italia</li>
+                    <li th:text="'Email: info@jaita98news.com'"></li>
+                    <li th:text="'Telefono: +39 0123 456789'"></li>
+                    <li th:text="'Indirizzo: Via della Stampa, 22, 00100 Roma, Italia'"></li>
                 </ul>
-                <p>Compila il modulo sottostante per inviarci un messaggio!</p>
-
+                <p th:text="'Compila il modulo sottostante per inviarci un messaggio!'"></p>
                 <!-- Form di Contatto -->
                 <form action="mailto:mrfalco90@gmail.com" method="post" enctype="text">
                     <div class="form-group">
-                        <label for="nome">Nome:</label>
+                        <label for="nome" th:text="'Nome:'"></label>
                         <input type="text" class="form-control" id="nome" name="nome" placeholder="Inserisci il tuo nome" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email:</label>
+                        <label for="email" th:text="'Email:'"></label>
                         <input type="email" class="form-control" id="email" name="email" placeholder="nome.cognome@gmail.com" required>
                     </div>
                     <div class="form-group">
-                        <label for="messaggio">Messaggio:</label>
+                        <label for="messaggio" th:text="'Messaggio:'"></label>
                         <textarea class="form-control" id="messaggio" name="messaggio" rows="4"  placeholder="Inserisci il tuo messaggio" required></textarea>
                     </div>
-                    <button type="submit" class="btn">Invia Messaggio</button>
+                    <button type="submit" class="btn" th:text="'Invia Messaggio'"></button>
                 </form>
             </div>
         </div>
@@ -89,19 +87,19 @@
             <div class="row">
                 <div class="col-md-6">
                     <!-- Contenuto del footer (informazioni) -->
-                    <p>Partita IVA: 00123456789</p>
-                    <p>Email: info@jaita98news.com</p>
-                    <p>Telefono: +39 0123 456789</p>
-                    <p>Indirizzo: Via della Stampa, 22, 00100 Roma, Italia</p>
-                    <p>&copy; 2024 Jaita98News. Tutti i diritti riservati.</p>
+                    <p th:text="'Partita IVA: 00123456789'"></p>
+                    <p th:text="'Email: info@jaita98news.com'"></p>
+                    <p th:text="'Telefono: +39 0123 456789'"></p>
+                    <p th:text="'Indirizzo: Via della Stampa, 22, 00100 Roma, Italia'"></p>
+                    <p th:text="'&copy; 2024 Jaita98News. Tutti i diritti riservati.'"></p>
                 </div>
                 <div class="col-md-6 text-center">
-                    <p>Per essere sempre aggiornato, seguici sui social!</p>
+                    <p th:text="'Per essere sempre aggiornato, seguici sui social!'"></p>
                     <!-- Icone social -->
                     <div class="social-icons">
-                        <a href="#"><img src="image/facebook.png" alt="Facebook"></a>
-                        <a href="#"><img src="image/twitter.png" alt="Twitter"></a>
-                        <a href="https://www.instagram.com/jaita98news/" target="_blank"><img src="image/instagram.png" alt="Instagram"></a>
+                        <a href="#"><img th:src="@{image/facebook.png}" alt="Facebook"></a>
+                        <a href="#"><img th:src="@{image/twitter.png}" alt="Twitter"></a>
+                        <a href="https://www.instagram.com/jaita98news/" target="_blank"><img th:src="@{image/instagram.png}" alt="Instagram"></a>3
                     </div>
                 </div>
             </div>

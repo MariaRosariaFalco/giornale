@@ -11,7 +11,4 @@ import it.corso.model.Articolo;
 public interface ArticoloDao extends CrudRepository<Articolo, Integer> {
 	public List<Articolo> findByCategoriaCodice(String codice);
 	
-	//List<Articolo> findArticoliOrderByDataPubblicazione();
-	
-	//List<Articolo> getArticoliByData(LocalDate data)
 }
