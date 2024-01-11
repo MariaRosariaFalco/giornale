@@ -233,3 +233,26 @@ a:link {
 .mt-4{
 	padding-top: 20px;
 }
+
+/*Aggiunte aportate dopo push*/
+
+.text-center {
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    /* Allineamento centro per le icone social in riga */
+    margin-top: 10px;
+    /* Spazio sopra le icone social */
+}
+
+.social-icons a {
+    margin: 0 10px;
+    /* Spazio tra le icone social */
+}
+
+.social-icons img {
+    width: 30px;
+}
