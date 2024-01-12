@@ -1,6 +1,7 @@
 package it.corso.model;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,7 +36,7 @@ public class Articolo {
 	private String autore;
 	
 	@Column(name="data_pubblicazione")
-	private LocalDate dataPubblicazione;
+	private LocalDateTime dataPubblicazione;
 	
 	@Column(name="testo")
 	private String testo;
@@ -95,11 +96,11 @@ public class Articolo {
 		this.autore = autore;
 	}
 
-	public LocalDate getDataPubblicazione() {
+	public LocalDateTime getDataPubblicazione() {
 		return dataPubblicazione;
 	}
 
-	public void setDataPubblicazione(LocalDate dataPubblicazione) {
+	public void setDataPubblicazione(LocalDateTime dataPubblicazione) {
 		this.dataPubblicazione = dataPubblicazione;
 	}
 

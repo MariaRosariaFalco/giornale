@@ -70,7 +70,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title" th:text="${a.titolo}"></h5>
                                     <p class="card-text" th:text="${a.sottotitolo}"></p>
-                                    <p class="card-text" th:text="${a.autore}+ ' ultimo aggiornamento: ' +${#temporals.format(a.dataPubblicazione,'dd-MM-yyyy')}"></p>
+                                    <p class="card-text" th:text="${a.autore}+ ' ultimo aggiornamento: ' +${#temporals.format(a.dataPubblicazione,'dd-MM-yyyy HH:mm')}"></p>
                                 </div>
                             </div>
                         </a>
@@ -88,7 +88,7 @@
                         <div class="card-body">
                             <h5 class="card-title" th:text="${listaEvidenza[3].titolo}"></h5>
                             <p class="card-text" th:text="${listaEvidenza[3].sottotitolo}"></p>
-                            <p class="card-text" th:text="${listaEvidenza[3].autore}+ ' ultimo aggiornamento: ' +${#temporals.format(listaEvidenza[3].dataPubblicazione,'dd-MM-yyyy')}"></p>
+                            <p class="card-text" th:text="${listaEvidenza[3].autore}+ ' ultimo aggiornamento: ' +${#temporals.format(listaEvidenza[3].dataPubblicazione,'dd-MM-yyyy HH:mm')}"></p>
                         </div>
                     </div>
                 </a>

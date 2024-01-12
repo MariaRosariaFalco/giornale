@@ -1,6 +1,6 @@
 package it.corso.controller;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ public class IndexController {
     private ArticoloService articoloService;
 	
 	@GetMapping
-	public String getPage(Model model, LocalDate dataPubblicazione, @RequestParam(name="richiesta", required=false) String richiesta) {
+	public String getPage(Model model, LocalDateTime dataPubblicazione, @RequestParam(name="richiesta", required=false) String richiesta) {
 		
 		List<Articolo> listaArticoli = richiesta==null ? articoloService.findLatestArticle(dataPubblicazione): articoloService.getArticoliByTag(richiesta);
         model.addAttribute("listaArticoli", listaArticoli);

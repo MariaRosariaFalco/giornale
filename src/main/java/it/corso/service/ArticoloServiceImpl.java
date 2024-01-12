@@ -1,6 +1,7 @@
 package it.corso.service;
 
-import java.time.LocalDate;
+
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -71,7 +72,7 @@ public class ArticoloServiceImpl implements ArticoloService {
 	}
 
 	@Override
-	public List<Articolo> findLatestArticle(LocalDate dataPubblicazione) {
+	public List<Articolo> findLatestArticle(LocalDateTime dataPubblicazione) {
 		 List<Articolo> articoli = (List<Articolo>) articoloDao.findAll();
 		 Comparator<Articolo> comparator = Comparator.comparing(Articolo::getDataPubblicazione).reversed();
 		 articoli.sort(comparator);

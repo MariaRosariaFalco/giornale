@@ -62,7 +62,7 @@
                         <br/>
                         <h4 class="card-title" th:text="${listaArticoli[id-1].titolo}"></h4>     
                         <p class="card-text" th:text="${listaArticoli[id-1].sottotitolo}"></p>                          
-                        <p class="card-text" th:text="${listaArticoli[id-1].autore}+ ' ultimo aggiornamento: ' +${#temporals.format(listaArticoli[id-1].dataPubblicazione,'dd-MM-yyyy')}"></p>
+                        <p class="card-text" th:text="${listaArticoli[id-1].autore}+ ' ultimo aggiornamento: ' +${#temporals.format(listaArticoli[id-1].dataPubblicazione,'dd-MM-yyyy HH:mm')}"></p>
                         <p class="articolo" th:text="${listaArticoli[id-1].testo}"></p>
                        <!--<p class="card-text" th:text="${listaArticoli[id-1].tag}"></p> -->  
                     </div>
