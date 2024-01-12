@@ -73,7 +73,7 @@ body {
 }
 
 .card-text {
-    color: #555;
+    color: #555; 
 }
 
 .footer {
@@ -84,21 +84,10 @@ body {
     height: auto;
 }
 
-/* .article-link {
-    display: inline-block;
-    padding: 8px 16px;
-    margin-top: 10px;
-    font-size: 16px;
-    background-color: #202038;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 20px;
-    transition: background-color 0.3s;
-} */
-
-/* .article-link:hover {
-    background-color: #34495e;
-} */
+.articolo {
+	  text-align:justify;
+	   color: #555; 
+}
 
 a:link {
     text-decoration: none;

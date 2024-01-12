@@ -57,11 +57,13 @@
                 <div class="card1">
                     <!--in caso spostare di nuovo immagine qua -->
                     <div class="card-body">
-                        <h4 class="card-title" th:text="${listaArticoli[id-1].titolo}"></h4> 
-                        <img th:src="@{'image/'+${listaArticoli[id-1].immagine}}"   class="card-img-top" alt="Immagine Articolo">     
+                        <img th:src="@{'image/'+${listaArticoli[id-1].immagine}}"   class="card-img-top" alt="Immagine Articolo">
+                        <br/>
+                        <br/>
+                        <h4 class="card-title" th:text="${listaArticoli[id-1].titolo}"></h4>     
                         <p class="card-text" th:text="${listaArticoli[id-1].sottotitolo}"></p>                          
                         <p class="card-text" th:text="${listaArticoli[id-1].autore}+ ' ultimo aggiornamento: ' +${#temporals.format(listaArticoli[id-1].dataPubblicazione,'dd-MM-yyyy')}"></p>
-                        <p class="card-text" th:text="${listaArticoli[id-1].testo}"></p>
+                        <p class="articolo" th:text="${listaArticoli[id-1].testo}"></p>
                        <!--<p class="card-text" th:text="${listaArticoli[id-1].tag}"></p> -->  
                     </div>
                 </div>
@@ -82,7 +84,7 @@
                     <p th:text="'&copy; 2024 Jaita98News. Tutti i diritti riservati.'"></p>
                 </div>
                 <div class="col-md-6 text-center">
-                     <p th:text="'Per essere sempre aggiornato, seguici sui social!'"></p>
+                     <p th:text="'Per essere sempre aggiornato seguici sui Social!'"></p>
                     <!-- Icone social -->
                     <div class="social-icons">
                         <a href="#"><img th:src="@{image/facebook.png}" alt="Facebook"></a>
